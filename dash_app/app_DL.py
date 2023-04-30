@@ -3,7 +3,6 @@
 
 import base64
 import math
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import pickle
@@ -11,7 +10,6 @@ import plotly.express as px
 import plotly.graph_objs as go
 import random
 import seaborn as sns
-import statsmodels.tsa.api as smt
 import sys
 import base64
 import datetime
@@ -287,7 +285,7 @@ def update_model_metrics(model):
     " est un modèle de réseau de neurones profond pour la classification d'images mais aussi pour les véhicules autonomes et l'imagerie médicale et il a été développé par des chercheurs de Google et a été publié en 2015 en tant qu'amélioration par rapport à son prédécesseur, InceptionV1.",
     html.Br(),
     html.Br(),
-    "Le modèle InceptionV3 utilise une architecture de réseau de neurones convolutif avec plusieurs couches, y compris des couches convolutives, des couches de regroupement et des couches entièrement connectées. L'une de ses principales caractéristiques est l'utilisation de **modules de démarrage**, qui sont conçus pour capturer efficacement des caractéristiques à différentes échelles et résolutions. Le modèle est formé sur un grand ensemble de données d'images labellisées et apprend à reconnaître les modèles et les caractéristiques dans les images. Une fois formé, le modèle peut être utilisé pour classer de nouvelles images dans différentes catégories ou détecter des objets dans des images.",
+    "Le modèle InceptionV3 utilise une architecture de réseau de neurones convolutif avec plusieurs couches, y compris des couches convolutives, des couches de regroupement et des couches entièrement connectées. L'une de ses principales caractéristiques est l'utilisation de modules de démarrage, qui sont conçus pour capturer efficacement des caractéristiques à différentes échelles et résolutions. Le modèle est formé sur un grand ensemble de données d'images labellisées et apprend à reconnaître les modèles et les caractéristiques dans les images. Une fois formé, le modèle peut être utilisé pour classer de nouvelles images dans différentes catégories ou détecter des objets dans des images.",
 	html.Br(),
 	html.Br(),
 	html.Strong("InceptionV3 "),
@@ -360,7 +358,7 @@ html.Strong(" EarlyStopping "),  "est également utilisé pour arrêter l'entra�
     
     html.Div([
     html.P([
-    html.Strong("EfficientNet"),
+    html.Strong("EfficientNet "),
     "est une architecture de réseau de neurones profonds qui a été développée en 2019. Ce modèle fait partie des modèles du", 
     html.Strong(" state-of-the-art "), "des performances sur les différentes tâches de Computer vVision.",
     html.Br(),
