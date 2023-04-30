@@ -13,12 +13,12 @@ Dans le cadre de la matière Deep Learning  enseigné par Mr Roman Yurchak au se
       - L’utilitaire « utils_deep » contenant les fonctions utilisés au sein du notebook
       - Les différents modèles au format pickle pour faciliter leur réutilisation
 3. Un répertoire dash_app contenant le code source de notre application web qui vous permettra d’avoir une vue d’ensemble du projet mais qui a également une fonctionnalité « Drag and Drop » qui vous permet à partir d’une image déposé par vos soins d’obtenir la prédiction du climat (ie levée de soleil, pluvieux, ensolleilé…) présent sur cette dernière.
-Pour lancer l'application, vous devez vous positionner dans le répertoire dash_app et executer la commande qui suit : 
+Pour lancer l'application, vous devez vous positionner dans le répertoire dash_app et exécuter la commande qui suit : 
 ```
 python app_DL.py
 ```
 
-#### DEMOSTRATION APPLICATION 
+#### DEMONSTRATION APPLICATION 
 <img width="1073" alt="demo_app" src="https://user-images.githubusercontent.com/118528236/235365557-dba983d7-42f9-408c-8656-166650bd21b7.png">
 
 Merci d’avance à vous pour la lecture du projet.
