@@ -18,4 +18,8 @@ Pour lancer l'application, vous devez vous positionner dans le répertoire dash_
 python app_DL.py
 ```
 
+#### DEMOSTRATION APPLICATION 
+<img width="1073" alt="demo_app" src="https://user-images.githubusercontent.com/118528236/235365557-dba983d7-42f9-408c-8656-166650bd21b7.png">
+
 Merci d’avance à vous pour la lecture du projet.
+
