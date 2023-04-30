@@ -126,7 +126,6 @@ google-auth-oauthlib==1.0.0
 google-pasta==0.2.0
 greenlet @ file:///C:/b/abs_47lk_w2ajq/croot/greenlet_1670513248400/work
 grpcio==1.53.0
-gunicorn
 h5netcdf @ file:///home/conda/feedstock_root/build_artifacts/h5netcdf_1677670132771/work
 h5py @ file:///C:/ci/h5py_1659071640187/work
 HeapDict @ file:///Users/ktietz/demo/mc3/conda-bld/heapdict_1630598515714/work
