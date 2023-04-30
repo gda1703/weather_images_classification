@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Apr 22 10:59:58 2023
 
-@author: giuli
-"""
 
 import base64
 import math
@@ -21,37 +17,17 @@ import base64
 import datetime
 import io
 from dash import dcc, html, dash_table
-
 from base64 import b64encode
 from dash import Dash, dcc, html
 from dash.dependencies import Input, Output, State
 from PIL import Image
-from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
-from statsmodels.tsa.stattools import adfuller, kpss
-from statsmodels.tsa.stattools import pacf, acf
-from statsmodels.api import OLS, add_constant
-from sklearn.metrics import mean_squared_error, mean_absolute_error
-from sklearn.pipeline import Pipeline
+
 
 from tensorflow.keras.applications.inception_v3 import InceptionV3
 
 
-# # Lecture de l'image pour la home page
-# with open("nexialog_image.png", "rb") as image_file:
-#     encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
-# image_path_nexialog = f"data:image/jpeg;base64,{encoded_string}"
-
-
-# Import des fonctions nÃ©cessaires Ã  l'exÃ©cution du modÃ¨le
-#sys.path.append('./packages/')
-#import data_utils_bma
-#subprocess.run(['python', 'data_utils_bma.py'])
-#import subprocess
-#import data_utils
-#subprocess.run(['python', 'data_utils.py', 'data_utils_bma.py'])
-
-# load the model
-with open(r'../inceptionV3_model.pkl', 'rb') as file:
+# Charger le modèle 
+with open(r'../src/packages/inceptionV3_model.pkl', 'rb') as file:
     incv3 = pickle.load(file)
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -60,7 +36,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 # Creation de l'object qui permet de contenir l'application dash 
 app = Dash(__name__, suppress_callback_exceptions=True, external_stylesheets=external_stylesheets)
 
-# Set the favicon
+# Configuration du nom de l'application
 app.title = 'Meteo_app'
 
 # Codage et encodage de l'image
@@ -73,13 +49,12 @@ def b64_image(image_filename):
 path_perf_lanet = 'lanet_perf.png'
 pil_img = Image.open(path_perf_lanet)
 
-
 path_perf_incp = 'inceptionV3_perf.png'
 pil_img = Image.open(path_perf_incp)
 
-
 path_perf_efn = 'efc_perf.png'
 pil_img = Image.open(path_perf_efn)
+
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
@@ -167,7 +142,7 @@ html.Ul([
 ])
 
         
-    # Creation de la page qui contient les modeles
+    # Creation de la page qui contient les modèles
     elif tab == 'tab-2':
         return html.Div([
             html.H3('Modèles et performances', style={'text-align': 'center'}),
@@ -334,7 +309,7 @@ def update_model_metrics(model):
     html.Br(),
     html.Br(),
 "Pour la compilation du modèle, nous avons utilisé l'optimiseur", 
-html.Strong(" Adam "), "avec un taux d'apprentissage de 0,0001 et la fonction de perte d'entropie croisée catégorielle est utilisée pour former le modèle. ", 
+html.Strong(" Adam "), "avec un taux d'apprentissage de 0,001 et la fonction de perte d'entropie croisée catégorielle est utilisée pour former le modèle. ", 
     html.Br(),
     html.Br(),
 "Concernant l'entrainement du modèle, le modèle a été entrainé sur les données d'entraînement (train_generator) et validé sur les données de validation (validation_generator) pour un maximum de 25 époques. Un rappel", 
@@ -462,13 +437,13 @@ def prediction(img):
 
 image_data = None
 
-# define a function to parse the uploaded image
+# Definition de la fonction qui parse l'image chargée 
 def parse_contents(contents, filename, date):
     global image_data
     image_data = contents.encode('utf-8').split(b';base64,')[1]
     image = Image.open(io.BytesIO(base64.b64decode(image_data)))
     
-    # get the predicted label
+    # Récuperer les labels prédits
     predicted_label = prediction(image)
     
     return html.Div([
@@ -478,7 +453,7 @@ def parse_contents(contents, filename, date):
         html.H4(f"Classe prédite : {predicted_label}")
     ])
 
-# define the callback function to update the output
+# Définition du callback qui permet de mettre à jour l'output 
 @app.callback(Output('output-image-upload', 'children'),
               Input('upload-image', 'contents'),
               State('upload-image', 'filename'),
