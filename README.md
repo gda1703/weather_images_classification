@@ -2,7 +2,7 @@
 
 Dans le cadre de la matière Deep Learning  enseigné par Mr Roman Yurchak au sein du Master 2 Modélisation statistiques économiques et financières, nous avons réalisé un modèle de classification d'images météorologiques à l'aide d'algorithmes de Deep Learning.  nous avons organisé le projet de la façon suivante : 
 -	Un répertoire data contenant les sous répertoires suivants : 
-•	Multi_class_ weather_dataset contenant les images selon leurs labels respectifs 
+  - Multi_class_ weather_dataset contenant les images selon leurs labels respectifs 
 •	Train contenant les données pour l’entraînement
 •	Test contenant les données de test 
 •	Validation contenant les données de validation 
